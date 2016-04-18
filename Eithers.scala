@@ -12,17 +12,15 @@ getContent(new URL("http://google.com")) match {
   case Right(source) => source.getLines.foreach(println)
 }
 
-val content: Either[String, Iterator[String]] =
-  getContent(new URL("http://danielwestheide.com")).right.map(_.getLines())
-   
-   
+val content: Either[String, Iterator[String]] = getContent(new URL("http://danielwestheide.com")).right.map(_.getLines())
+
 val part5 = new URL("http://t.co/UR1aalX4")
 val part6 = new URL("http://t.co/6wlKwTmu")
-val content = getContent(part5).right.map(a =>
+val content2 = getContent(part5).right.map(a =>
   getContent(part6).right.map(b =>
     (a.getLines().size + b.getLines().size) / 2))
 
-val content = getContent(part5).right.flatMap(a =>
+val content3 = getContent(part5).right.flatMap(a =>
   getContent(part6).right.map(b =>
     (a.getLines().size + b.getLines().size) / 2))
 
@@ -44,7 +42,7 @@ def averageLineCount2(url1: URL, url2: URL): Either[String, Int] =
 averageLineCount(part5, part6)
 averageLineCount2(part5, part6)
 
-val content: Iterator[String] =
+val content4 : Iterator[String] =
   getContent(new URL("http://danielwestheide.com")).fold(Iterator(_), _.getLines())
 val moreContent: Iterator[String] =
   getContent(new URL("http://google.com")).fold(Iterator(_), _.getLines())
@@ -86,23 +84,4 @@ val checkedBlacklist: List[Either[URL, Set[Citizen]]] =
   blacklist.map(resource =>
     if (resource.visitors.isEmpty) Left(resource.url)
     else Right(resource.visitors))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

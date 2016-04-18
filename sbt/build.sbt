@@ -4,7 +4,6 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-// Change this to another test framework if you prefer
 libraryDependencies ++=  Seq(
   "com.github.pathikrit" % "better-files_2.11" % "2.15.0",
   "com.lihaoyi" %% "ammonite-ops" % "0.5.7",

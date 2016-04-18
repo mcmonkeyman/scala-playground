@@ -7,8 +7,6 @@ def buyCigarettes(customer: Customer): Cigarettes = {
   else new Cigarettes
 }
 
-
-
 val youngCustomer = Customer(15)
 try {
   buyCigarettes(youngCustomer)

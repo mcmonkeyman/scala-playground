@@ -9,5 +9,8 @@ object URLExtractor {
   }
 }
 
-"http://www.fun.com" match { case URLExtractor() => println("match"); case _ => println("other")}
+"http://www.fun.com" match {
+  case URLExtractor() => println("match");
+  case _ => println("other")
+}
 
