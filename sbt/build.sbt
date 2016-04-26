@@ -7,6 +7,7 @@ scalaVersion := "2.11.7"
 libraryDependencies ++=  Seq(
   "com.github.pathikrit" % "better-files_2.11" % "2.15.0",
   "com.lihaoyi" %% "ammonite-ops" % "0.5.7",
+  "com.github.seratch" %% "awscala" % "0.5.+",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 )
 
@@ -20,4 +21,8 @@ initialCommands in console := """
     |import ammonite.ops._
     |import java.io.{File => JFile}
     |import ammonite.ops.ImplicitWd._
+    |import java.nio.file._
+    |import awscala._ 
+    |import awscala.s3._
+    |implicit val s3 = S3()
     |""".stripMargin
